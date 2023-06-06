@@ -32,7 +32,7 @@ class Button extends StatefulWidget {
     this.textSize,
   }) : super(key: key);
 
-  final IconData? icon;
+  final Widget? icon;
   final double? iconSize;
   final Text? text;
   final Widget? leading;
@@ -100,9 +100,7 @@ class _ButtonState extends State<Button> with TickerProviderStateMixin {
     else
       expandController.forward();
 
-    Widget icon = widget.leading ??
-        Icon(widget.icon,
-            color: _colorTweenAnimation.value, size: widget.iconSize);
+    Widget icon = widget.leading ?? widget.icon!;
 
     return Material(
       type: MaterialType.transparency,
